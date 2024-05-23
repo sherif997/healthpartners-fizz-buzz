@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\share\\source\\repos\\healthpartners-fizz-buzz\\fizzbuzz-test\\FizzBuzz-application.csproj": {}
+    "C:\\Users\\share\\source\\repos\\healthpartners-fizz-buzz\\FizzBuzz-app\\FizzBuzz-application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\share\\source\\repos\\healthpartners-fizz-buzz\\fizzbuzz-test\\FizzBuzz-application.csproj": {
+    "C:\\Users\\share\\source\\repos\\healthpartners-fizz-buzz\\FizzBuzz-app\\FizzBuzz-application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\share\\source\\repos\\healthpartners-fizz-buzz\\fizzbuzz-test\\FizzBuzz-application.csproj",
+        "projectUniqueName": "C:\\Users\\share\\source\\repos\\healthpartners-fizz-buzz\\FizzBuzz-app\\FizzBuzz-application.csproj",
         "projectName": "FizzBuzz-application",
-        "projectPath": "C:\\Users\\share\\source\\repos\\healthpartners-fizz-buzz\\fizzbuzz-test\\FizzBuzz-application.csproj",
+        "projectPath": "C:\\Users\\share\\source\\repos\\healthpartners-fizz-buzz\\FizzBuzz-app\\FizzBuzz-application.csproj",
         "packagesPath": "C:\\Users\\share\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\share\\source\\repos\\healthpartners-fizz-buzz\\fizzbuzz-test\\obj\\",
+        "outputPath": "C:\\Users\\share\\source\\repos\\healthpartners-fizz-buzz\\FizzBuzz-app\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\share\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,16 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using fizzbuzz_app.Interfaces;
+using fizzbuzz_app.Rules;
+
 
 namespace fizzbuzz_app
 {
     public class FizzBuzz
     {
-        public string getResult(int result)
+        private IEnumerable<IRule> _rules;
+        private  IRuleService _ruleService;
+        public FizzBuzz(IRuleService ruleService)
         {
-            return null; // to be implemented
+            _ruleService = ruleService;
+            _rules = _ruleService.LoadRules();
+
+        }
+
+        public string GetResult(int number)
+        {
+            _rules = _ruleService.LoadRules();
+            foreach (var rule in _rules)
+            {
+                var result = rule.CheckInput(number);
+                if (result != null)
+                {
+                    return result;
+                }
+            }
+
+            return number.ToString();
         }
     }
 }
