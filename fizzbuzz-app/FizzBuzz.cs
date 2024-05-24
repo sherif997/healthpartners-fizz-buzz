@@ -17,7 +17,6 @@ namespace fizzbuzz_app
 
         public string GetResult(int number)
         {
-            _rules = _ruleService.LoadRules();
             foreach (var rule in _rules)
             {
                 var result = rule.CheckInput(number);
