@@ -1,6 +1,6 @@
 ﻿using fizzbuzz_app.Interfaces;
 using fizzbuzz_app.Rules;
-
+using System.Reflection;
 
 namespace fizzbuzz_app.Services
 {
@@ -8,13 +8,10 @@ namespace fizzbuzz_app.Services
     {
         public IEnumerable<IRule> LoadRules()
         {
-            var ruleTypes = new List<Type>
-            {
-                typeof(FizzBuzzRule), // Ensure FizzBuzzRule is loaded first
-                typeof(FizzRule),
-                typeof(BuzzRule),
-                typeof(DefaultRule)
-            };
+            var ruleTypes = Assembly.GetExecutingAssembly().GetTypes()
+                .Where(type => typeof(IRule).IsAssignableFrom(type) && type.IsClass && !type.IsAbstract)
+                .OrderByDescending(type => type.Name == "FizzBuzzRule" ? 2 : type.Name == "DefaultRule" ? 0 : 1)
+                .ThenBy(type => type.Name);
 
             var rules = new List<IRule>();
 
